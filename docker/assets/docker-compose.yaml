@@ -5,10 +5,10 @@ services:
     container_name: redis
     network_mode: host
     command: >
-      --requirepass dragonfly
+      --requirepass nromanen
     restart: always
     healthcheck:
-      test: ["CMD", "redis-cli","-a","dragonfly","ping"]
+      test: ["CMD", "redis-cli","-a","nromanen","ping"]
       interval: 1s
       timeout: 3s
       retries: 30
@@ -18,8 +18,8 @@ services:
     container_name: mysql
     network_mode: host
     environment:
-      - MARIADB_USER=dragonfly
-      - MARIADB_PASSWORD=dragonfly
+      - MARIADB_USER=nromanen
+      - MARIADB_PASSWORD=nromanen
       - MARIADB_DATABASE=manager
       - MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=yes
     restart: always
