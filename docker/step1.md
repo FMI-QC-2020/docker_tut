@@ -4,6 +4,11 @@
 
 `docker-compose version`{{execute T1}}
 
+### Clone repo
+
+`git clone https://github.com/romanenko-natali/angular_docker.git`{{execute T1}}
+
+
 Wait for clone success.
 
 ### Get Local ip
