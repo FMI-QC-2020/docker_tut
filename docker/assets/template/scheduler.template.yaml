@@ -23,7 +23,7 @@ scheduler:
   # "ml" is the machine learning scheduling algorithm
   # It also supports user plugin extension, the algorithm value is "plugin",
   # and the compiled `d7y-scheduler-plugin-evaluator.so` file is added to
-  # the dragonfly working directory plugins
+  # the nromanen working directory plugins
   algorithm: default
   # backSourceCount is the number of backsource clients
   # when the seed peer is unavailable
