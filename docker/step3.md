@@ -3,9 +3,9 @@ Pull demo images and wait it done
 
 `time docker pull nginx`{{execute T1}}
 
-Watching dfdaemon log
+Watching nromanen log
 
-`cat /var/log/dragonfly/daemon/core.log`{{execute T2}}
+`cat /var/log/nromanen/daemon/core.log`{{execute T2}}
 
 Remove demo image
 
@@ -15,6 +15,6 @@ Rerun the pull command line
 
 `time docker pull nginx`{{execute T1}}
 
-Pickup `peer task done` log from `/var/log/dragonfly/daemon/core.log`
+Pickup `peer task done` log from `/var/log/nromanen/daemon/core.log`
 
-`grep "peer task done" /var/log/dragonfly/daemon/core.log`{{execute T2}}
+`grep "peer task done" /var/log/nromanen/daemon/core.log`{{execute T2}}
