@@ -14,14 +14,14 @@ server:
     # stand address
     addr: :8080
   # front-end console resource path
-  publicPath: /opt/dragonfly/dist
+  publicPath: /opt/nromanen/dist
 
 # database info used for server
 database:
   # mysql configure
   mysql:
-    user: dragonfly
-    password: dragonfly
+    user: nromanen
+    password: nromanen
     host: __IP__
     port: 3306
     dbname: manager
@@ -37,7 +37,7 @@ database:
   #   insecureSkipVerify: true
   # redis configure
   redis:
-    password: dragonfly
+    password: nromanen
     host: __IP__
     port: 6379
     db: 0
@@ -69,5 +69,5 @@ verbose: true
 # default is -1. If it is 0, pprof will use a random port.
 pprof-port: -1
 
-# jaeger endpoint url, like: http://jaeger.dragonfly.svc:14268/api/traces
+# jaeger endpoint url, like: http://jaeger.nromanen.svc:14268/api/traces
 jaeger: ""
