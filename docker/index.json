@@ -27,11 +27,11 @@
       "host01": [
         {
           "file": "Dockerfile",
-          "target": "~/"
+          "target": "/root/"
         },
 	{
           "file": "ruby-script.rb",
-          "target": "~/"
+          "target": "/root/"
         },
 	{
           "file": "template/cdn.template.yaml",
