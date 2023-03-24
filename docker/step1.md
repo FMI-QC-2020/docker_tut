@@ -1,8 +1,51 @@
-### View Docker version and  Docker Compose version
+### View Docker version, Docker info, Docker Compose version
 
 `docker version`{{execute T1}}
 
+`docker info`{{execute T1}}
+
 `docker-compose version`{{execute T1}}
+
+### Run postgres
+
+docker run --name some-postgres -p 5433:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+
+docker ps 
+stop container
+docker ps -a
+run container
+
+
+### Create file runy-script.rb with content
+
+ruby-script.rb
+if ARGV.empty?
+  puts 'without argument'
+else 
+ARGV.each do| el |
+  puts "Argument: #{el}"
+end
+end
+
+### Hint
+
+use vim or echo > file
+
+### Create Dockerfile with content
+
+FROM ruby:3.0
+COPY ruby-script.rb /ruby-script.rb
+RUN chmod +x /ruby-script.rb
+CMD ruby /ruby-script.rb
+
+###
+
+
+run with parameter
+run without parameters
+
+
+
 
 ### Clone repo
 
