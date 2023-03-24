@@ -26,6 +26,14 @@
     "assets": {
       "host01": [
         {
+          "file": "Dockerfile",
+          "target": "~/"
+        },
+	{
+          "file": "ruby-script.rb",
+          "target": "~/"
+        },
+	{
           "file": "template/cdn.template.yaml",
           "target": "/root/template/"
         },
