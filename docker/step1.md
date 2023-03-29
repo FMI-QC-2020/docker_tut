@@ -13,19 +13,21 @@ Password for user postgres shoud be set as environment variable `POSTGRES_PASSWO
 
 ### View all runing containers
 
-`docker ps`{execute T1}}
+`docker ps`{{execute T1}}
 
 ### Stop container
 
-use command `docker stop <container_name or container_ID>` When you want to use container_id it doesn't nessecary type full id, you can type only unique chain of characters over all container ids 
+use command `docker stop <container_name or container_ID>` 
+
+When you want to use container_id it doesn't nessecary type full id, you can type only unique chain of characters over all container ids 
 
 ### View all containers
 
-`docker ps -a`{execute T1}}
+`docker ps -a`{{execute T1}}
 
-### Run exited container
+### Start exited container
 
-`docker run <container_name or container_ID>`
+`docker start <container_name or container_ID>`
 
 ### View all running containers
 
