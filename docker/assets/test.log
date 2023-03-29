@@ -1,0 +1,13 @@
+ServerLog ServerStartup 1 0000622e49ba14c8:0 2009-03-16 23:28:38 Siebel Enterprise Applications Server is starting up
+
+ServerLog LstnObjCreate 1 000062d549ba14c8:0 2009-03-16 23:28:38 Created port 49156 for Workflow Process Batch Manager
+
+ServerLog LstnObjCreate 1 000062d549ba14c8:0 2009-03-16 23:28:38 Created port 49157 for Workflow Recovery Manager
+
+ServerLog LstnObjCreate 1 000062d649ba14c8:0 2009-03-16 23:28:38 Created port 49158 for Workflow Process Manager
+
+ServerLog LstnObjCreate 1 000062d649ba14c8:0 2009-03-16 23:28:38 Created port 49159 for File System Manager
+
+ServerLog LstnObjCreate 1 000062d649ba14c8:0 2009-03-16 23:28:38 Created port 49160 for Server Request Processor
+
+ServerLog LstnObjCreate 1 000062d649ba14c8:0 2009-03-16 23:28:38 Created port 49161 for Siebel Administrator Notification Component
