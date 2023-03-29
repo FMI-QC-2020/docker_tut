@@ -1,8 +1,9 @@
-### Clone repo
+### Task
 
-`git clone https://github.com/romanenko-natali/angular_docker.git`{{execute T1}}
-
-create file  PythonDockerfile in dir pyton_supp for  docker image with script on python for get last n lines of file qpp.log
+1. Create in `pyton_supp/` directory python script `last_lines.py` for get `n` last lines of some files. This script must be execute with arguments <name_of_file> -lines <lines_count>.
+2.  Create file `PythonDockerfile` in dir `pyton_supp` for docker image with script on python for get last n lines of file.
+3.  Create image from this PythonDockerfile.
+4.  Mount file test.log when running the container `docker run -v /`
 
 docker build -t mysuperimage -f pyton_supp/PythonDockerfile .
 
