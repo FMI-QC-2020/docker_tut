@@ -1,11 +1,12 @@
 ### Task
 
-1. Create in `pyton_supp/` directory python script `last_lines.py` for get `n` last lines of some files. This script must be execute with arguments <name_of_file> -lines <lines_count>.
-2.  Create file `PythonDockerfile` in dir `pyton_supp` for docker image with script on python for get last n lines of file.
-3.  Create image from this PythonDockerfile.
-4.  Mount file test.log when running the container `docker run -v /`
+1. Create in `pyton_supp` directory python script `last_lines.py`. This script prints last `n` lines of any file. This script is executed with the following arguments: <name_of_file> -lines <lines_count>.
+2.  Create dockerfile `PythonDockerfile` in dir `pyton_supp` which copies and runs the script.
+3.  Build the image from this PythonDockerfile.
+4.  Mount file test.log when running the container `docker run -v...`
 
 docker build -t mysuperimage -f pyton_supp/PythonDockerfile .
+
 
 `docker rmi <image_id>`
 
@@ -16,6 +17,8 @@ docker build -t mysuperimage -f pyton_supp/PythonDockerfile .
 `docker ps`{{execute T2}}
 
 `mkdir /newdir`{{execute T1}}
+
+
 
 `exit`{{execute T1}}
 
