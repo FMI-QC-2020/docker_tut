@@ -32,6 +32,10 @@ CMD ruby /ruby-script.rb`
 
 `docker build . --tag arguments`{{execute T1}}
 
+### View all local images
+
+`docker images`{{execute T1}}
+
 ### Run docker image with name `arguments` without parameters
 
 `docker run arguments`{{execute T1}}
