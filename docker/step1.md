@@ -25,7 +25,7 @@ use command `docker stop <container_name or container_ID>` When you want to use 
 
 ### Run exited container
 
-`run container <container_name or container_ID>`
+`docker run <container_name or container_ID>`
 
 ### View all running containers
 
