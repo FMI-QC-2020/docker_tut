@@ -36,17 +36,20 @@ CMD ruby /ruby-script.rb`
 
 `docker images`{{execute T1}}
 
-### Run docker image with name `arguments` without parameters
+### Run docker container using image `arguments` without parameters
 
 `docker run arguments`{{execute T1}}
 
-### Run docker image with name `arguments` with parameters
+### Run docker container using image `arguments` with parameters
 
 `docker run arguments some arguments`{{execute T1}}
 
-You have some problem due to unpossibility to execute image with arguments. So we should change our Dockerfile and instead of last line type  
+It won't work, because script `ruby-script.rb` inside the docker container expectes arguments.    You have some problem due to unpossibility to execute image with arguments. So we should change our Dockerfile and instead of last line type  
 
 `ENTRYPOINT ["ruby", "/ruby-script.rb"]
-CMD  []`. After that we should rebuild image and run `docker run arguments some arguments`{{execute T1}}
+
+CMD  []`. 
+
+After that we should rebuild image and run `docker run arguments some arguments`{{execute T1}}
 
 
