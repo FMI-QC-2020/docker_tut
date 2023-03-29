@@ -12,7 +12,7 @@ else
   
 &nbsp;&nbsp; end
 
-end`
+end
 
 #### Hint
 
@@ -43,4 +43,10 @@ CMD ruby /ruby-script.rb`
 ### Run docker image with name `arguments` with parameters
 
 `docker run arguments some arguments`{{execute T1}}
+
+You have some problem due to unpossibility to execute image with arguments. So we should change our Dockerfile and instead of last line type  
+
+`ENTRYPOINT ["ruby", "/ruby-script.rb"]
+CMD  []`. After that we should rebuild image and run `docker run arguments some arguments`{{execute T1}}
+
 
