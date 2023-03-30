@@ -6,9 +6,14 @@
 4.  Build the image from this PythonDockerfile `docker build -t mysuperimage -f pyton_supp/PythonDockerfile .`.
 5.  Mount file test.log when running the container `docker run -v...`
 
-
-docker run -v /test.log:/test.log mysuperimage test.log -lines 5 
-
+<details>
+<summary>Hint</summary>
+Use
+```
+docker run -v /test.log:/test.log mysuperimage test.log -lines 5
+```{{exec T1}}
+</details>
+ 
 ### Delete image 
 
 `docker rmi <image_id>`
