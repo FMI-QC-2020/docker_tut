@@ -4,7 +4,7 @@ Move to `angular-compose` directory
 
 Create file Dockerfile-dev in directory `api/` 
 
-FROM node:10
+FROM node:latest
 
 WORKDIR /usr/src/app/api
 
@@ -18,7 +18,7 @@ CMD ["npm", "run", "dev"]
 
 Create file Dockerfile-dev in directory `ui/` 
 
-FROM node:10
+FROM node:latest
 
 WORKDIR /usr/src/app/ui
 
@@ -32,7 +32,7 @@ CMD ["npm", "start"]
 
 Create file `docker-compose.yml`
 
-version: '1'
+version: '3'
 
 services:
 
@@ -76,19 +76,36 @@ services:
        
        - /usr/src/app/ui/node_modules
        
- Check if application is started with command
+  ### Start docker compose
+  
+  `docker-compose up`{{execute T1}}
+       
+       
+ This angular application required node version <= 16, so we must rewrite docker file for ui part with 16 version of nodejs
  
- curl with post
+ ### Rebuild docker compose 
  
- curl with get
+ `docker-compose build`
+ 
+ ### Start docker compose
+ 
+  `docker-compose up`
+       
+       
+ ### Check if application is started with commands
+ 
+ 
+ curl for post method `curl -X POST http://localhost:4201/api/user  -H 'Content-Type: application/json' -d '{"user":{"firstName":"user One","lastName":"user One","email":"user1@gmail.com"}}'`
+ 
+ curl for get method `curl http://localhost:4201/api/users`
  
  ### Stop docker compose
  
 `docker-compose stop`{{execute T2}}
 
-### Check if application was stop
+### Check if application was stopped
 
- curl with get
+curl http://localhost:4201/api/users`{{execute T1}}
 
  
        
