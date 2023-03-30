@@ -5,17 +5,21 @@
   "details": {
     "steps": [
       {
-        "title": "Initializing",
+        "title": "Info about docker and docker compose",
         "text": "step1.md"
       },
       {
-        "title": "Download the precompiled binaries and Startup",
+        "title": "",
         "text": "step2.md"
       },
       {
-        "title": "Pull images by dfdaemon",
+        "title": "",
         "text": "step3.md"
-      }
+      },
+      {
+        "title": "Docker compose",
+        "text": "step4.md"
+      }        
     ],
     "intro": {
       "text": "intro.md"
