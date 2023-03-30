@@ -18,7 +18,7 @@ docker run -v /test.log:/test.log mysuperimage test.log -lines 5
 
 `docker run -it ubuntu:18.10 /bin/bash`{{execute T1}}
 
-### Execute commanda in container:
+### Execute commands in container:
 
 `ls`{{execute T1}}
 
