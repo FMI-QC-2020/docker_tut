@@ -1,4 +1,6 @@
-### Clone repository ...
+### Clone repository `https://github.com/romanenko-natali/angular-compose`
+
+Move to `angular-compose` directory
 
 Create file Dockerfile-dev in directory `api/` 
 
@@ -14,11 +16,11 @@ EXPOSE 3080
 
 CMD ["npm", "run", "dev"]
 
-Create file Dockerfile-dev in directory `api/ui` 
+Create file Dockerfile-dev in directory `ui/` 
 
 FROM node:10
 
-WORKDIR /usr/src/app/app-ui
+WORKDIR /usr/src/app/ui
 
 COPY package*.json ./
 
@@ -28,26 +30,65 @@ EXPOSE 4201
 
 CMD ["npm", "start"]
 
+Create file `docker-compose.yml`
+
 version: '1'
+
 services:
+
   nodejs-server:
+  
     build:
+    
       context: ./api
+      
       dockerfile: Dockerfile-dev
+      
     ports:
+    
       - "3080:3080"
+      
     container_name: node-api
+    
     volumes:
+    
        - ./api:/usr/src/app/api
+       
        - /usr/src/app/api/node_modules
+       
   angular-ui:
+  
     build:
-      context: ./app-ui
+    
+      context: ./ui
+      
       dockerfile: Dockerfile-dev
+      
     ports:
+    
       - "4201:4201"
+      
     container_name: angular-ui
+    
     volumes:
-       - ./app-ui:/usr/src/app/app-ui
-       - /usr/src/app/app-ui/node_modules
+    
+       - ./ui:/usr/src/app/ui
+       
+       - /usr/src/app/ui/node_modules
+       
+ Check if application is started with command
+ 
+ curl with post
+ 
+ curl with get
+ 
+ ### Stop docker compose
+ 
+`docker-compose stop`{{execute T2}}
+
+### Check if application was stop
+
+ curl with get
+
+ 
        
