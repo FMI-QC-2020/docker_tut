@@ -28,7 +28,7 @@ RUN chmod +x /ruby-script.rb
 
 CMD ruby /ruby-script.rb`
 
-### Build docker image from current directory with name `arguments`
+### Build docker image with name `arguments`
 
 `docker build . --tag arguments`{{execute T1}}
 
@@ -44,7 +44,8 @@ CMD ruby /ruby-script.rb`
 
 `docker run arguments some arguments`{{execute T1}}
 
-It won't work, because script `ruby-script.rb` inside the docker container expectes arguments.    You have some problem due to unpossibility to execute image with arguments. So we should change our Dockerfile and instead of last line type  
+It won't work, because we should appended as command line parameters by treating those as arguments of the command. 
+Change Dockerfile and replace last line of file with code  
 
 `ENTRYPOINT ["ruby", "/ruby-script.rb"]
 
