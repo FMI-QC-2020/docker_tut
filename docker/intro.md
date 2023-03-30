@@ -1,2 +1,2 @@
-Hi! It is Docker Compose guide for DevOps.
+Hi! It is Docker and DockerCompose guide for DevOps.
 Good luck!
