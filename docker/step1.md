@@ -6,8 +6,8 @@
 
 `docker-compose version`{{execute T1}}
 
-### Run postgres image in container with name `postgres` with exposed port 5433 for default postgresql port 5432.
-Password for user postgres shoud be set as environment variable `POSTGRES_PASSWORD` with value `mysecretpassword`. When postgresql started it will be connected to database `postgres`
+### Run postgres container with name `some-postgres` and expose port 5433 (the default postgresql port 5432).
+Password for user postgres shoud be set via environment variable `POSTGRES_PASSWORD` with value `mysecretpassword`. 
 
 `docker run --name some-postgres -p 5433:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres`{{execute T1}}
 
