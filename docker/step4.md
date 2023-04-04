@@ -41,61 +41,51 @@ CMD ["npm", "start"]
 
 `touch docker-compose.yml`{{execute T1}}
 
-version: '3'
-
-services:
-
-  nodejs-server:
-  
-    build:
-    
+<code>
+version: '3'  
+services:  
+  nodejs-server:  
+     build:  
       context: ./api
-      
-      dockerfile: Dockerfile-dev
-      
-    ports:
-    
-      - "3080:3080"
-      
-    container_name: node-api
-    
-    volumes:
-    
-       - ./api:/usr/src/app/api
-       
-       - /usr/src/app/api/node_modules
-       
-  angular-ui:
+      dockerfile: 
+        Dockerfile-dev
+     ports:
+      - "3080:3080" 
+     container_name: node-api  
+     volumes:  
+        - ./api:/usr/src/app/api  
+        - /usr/src/app/api/node_modules 
+  angular-ui: 
+    build:  
+      context: ./ui 
+      dockerfile: Dockerfile-dev  
+    ports:  
+      - "4201:4201" 
+    container_name: angular-ui  
+    volumes:  
+        - ./ui:/usr/src/app/ui  
+        - /usr/src/app/ui/node_modules
+  </code>
   
-    build:
-    
-      context: ./ui
-      
-      dockerfile: Dockerfile-dev
-      
-    ports:
-    
-      - "4201:4201"
-      
-    container_name: angular-ui
-    
-    volumes:
-    
-       - ./ui:/usr/src/app/ui
-       
-       - /usr/src/app/ui/node_modules
+  
+<details>
+<summary>Attention</summary>
+  Validate your docker compose via 
+  `https://codebeautify.org/yaml-validator`
+</details>
+  
+  
        
   ### 6. From your project directory, start up your application
 
   `docker-compose up`{{execute T1}}
-       
        
  We have error `angular-ui exited with code 1`.
  This angular application required node version <= 16, so we must 
  
  ### 7. Rewrite docker file for ui part with 16 version of nodejs 
  
- `touch ui/Dockerfile-dev`{{execute T1}}
+ `vim ui/Dockerfile-dev`{{execute T1}}
  
  ### 8. Stop docker compose
 
