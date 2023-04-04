@@ -1,8 +1,14 @@
-### Clone repository `https://github.com/romanenko-natali/angular-compose`
+### 1. Clone repository 
 
-Move to `angular-compose` directory
+`https://github.com/romanenko-natali/angular-compose`
 
-Create file Dockerfile-dev in directory `api/` 
+### 2. Move to `angular-compose` directory
+
+`cd angular-compose`
+
+### 3. Create file Dockerfile-dev in directory `api/` 
+
+`touch api/Dockerfile-dev` with content
 
 FROM node:latest
 
@@ -16,7 +22,8 @@ EXPOSE 3080
 
 CMD ["npm", "run", "dev"]
 
-Create file Dockerfile-dev in directory `ui/` 
+### 4. Create file Dockerfile-dev in directory `ui/` 
+
 
 FROM node:latest
 
@@ -30,7 +37,9 @@ EXPOSE 4201
 
 CMD ["npm", "start"]
 
-Create file `docker-compose.yml`
+### 5. Create file `docker-compose.yml`
+
+`touch docker-compose.yml`{{execute T1}}
 
 version: '3'
 
@@ -76,39 +85,44 @@ services:
        
        - /usr/src/app/ui/node_modules
        
-  ### Start docker compose
-  
+  ### 6. From your project directory, start up your application
+
   `docker-compose up`{{execute T1}}
        
        
  We have error `angular-ui exited with code 1`.
- This angular application required node version <= 16, so we must rewrite docker file for ui part with 16 version of nodejs
+ This angular application required node version <= 16, so we must rewrite docker file for ui part with 16 version of nodejs 
+ `touch ui/Dockerfile-dev`{{execute T1}}
  
- ### Stop docker compose
+ ### 7. Stop docker compose
 
- Ctrl+C
+ Ctrl+C or `cd angular-compose && docker-compose stop`{{execute T2}}
 
- ### Rebuild docker compose 
+ ### 8. Rebuild docker compose 
  
- `docker-compose build`
+ `docker-compose build`{{execute T1}}
  
- ### Start docker compose
+ ### 9. Start application
  
-  `docker-compose up`
+  `docker-compose up`{{execute T1}}
        
        
- ### Check if application is started with commands
+ ### 10. Check if application is started with commands
  
  
- curl for post method `curl -X POST http://localhost:4201/api/user  -H 'Content-Type: application/json' -d '{"user":{"firstName":"user One","lastName":"user One","email":"user1@gmail.com"}}'`{{execute T2}}
+ curl for post method 
  
- curl for get method `curl http://localhost:4201/api/users`
+ `curl -X POST http://localhost:4201/api/user  -H 'Content-Type: application/json' -d '{"user":{"firstName":"user One","lastName":"user One","email":"user1@gmail.com"}}'`{{execute T2}}
  
- ### Stop docker compose
+ curl for get method 
  
-`docker-compose -f angular-compose/docker-compose.yml stop`{{execute T2}}
+ `curl http://localhost:4201/api/users`
+ 
+ ### 11. Stop application
+ 
+`docker-compose -f angular-compose/docker-compose.yml stop`{{execute T3}}
 
-### Check if application was stopped
+### 12. Check if application was stopped
 
 curl http://localhost:4201/api/users`{{execute T1}}
 
