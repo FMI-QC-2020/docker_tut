@@ -13,9 +13,13 @@
         "text": "step2.md"
       },
       {
-        "title": "Create Docker image",
+        "title": "Practical task",
         "text": "step3.md"
       },
+	    {
+		"title": "Interactive Commands and Logs",
+        "text": "step3_1.md"    
+	    },
       {
         "title": "Docker compose",
         "text": "step4.md"
