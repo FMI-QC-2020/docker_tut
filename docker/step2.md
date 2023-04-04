@@ -1,4 +1,4 @@
-### Create file `ruby-script.rb` with content
+### 1. Create file `ruby-script.rb` with content
 
 if ARGV.empty?
 
@@ -18,39 +18,76 @@ end
 
 use `vim ruby-script.rb` or `echo 'content' > ruby-script.rb`
 
-### Create Dockerfile with content
+### 2. Create Dockerfile with content
 
-`FROM ruby:3.0
+FROM ruby:3.0
+
+<details>
+<summary>FROM <image>[:tag]</summary>
+This instruction will set the base image for the Dockerfile, which means that every instruction that follows applies to this base image
+</details>
 
 COPY ruby-script.rb /ruby-script.rb
 
+ <details>
+<summary>COPY</summary>
+The COPY instruction copies a folder from your local machine to your Docker image.
+  </details>
+
 RUN chmod +x /ruby-script.rb
+  
+  <details>
+<summary>RUN</summary>
+  This instruction runs commands
+  </details>
 
-CMD ruby /ruby-script.rb`
+CMD ruby /ruby-script.rb
+  
+   <details>
+<summary>CMD</summary>
+  The CMD instruction sets a default command, which will be executed when you run the Docker image without specifying a command
+  </details>
 
-### Build docker image with name `arguments`
+### 3. Build docker image with name `arguments`
 
 `docker build . --tag arguments`{{execute T1}}
 
-### View all local images
+### 4. View all local images
 
 `docker images`{{execute T1}}
 
-### Run docker container using image `arguments` without parameters
+### 5. Run docker container using image `arguments` without parameters
 
 `docker run arguments`{{execute T1}}
 
-### Run docker container using image `arguments` with parameters
+### 6. Try to run docker container using image `arguments` with parameters
 
 `docker run arguments some arguments`{{execute T1}}
 
-It won't work, because we should appended as command line parameters by treating those as arguments of the command. 
-Change Dockerfile and replace last line of file with code  
+It won't work, because we should pass command line parameters as arguments to our script executed when container started. 
+  
+  ### 7. Change Dockerfile and replace last line of file with code  
 
-`ENTRYPOINT ["ruby", "/ruby-script.rb"]
+ENTRYPOINT ["ruby", "/ruby-script.rb"]
+  
+   <details>
+<summary>ENTRYPOINT</summary>
+  An ENTRYPOINT allows you to configure a container that will run as an executable.
+  ENTRYPOINT instructions are not ignored but instead are appended as command line parameters by treating those as arguments of the command.
+  </details>
 
-CMD  []`. 
+CMD  [] 
+  
+  ### 8. Rebuild image
+  
+  `docker build . --tag arguments`
+  
+  ### 9. Run docker container using image `arguments` with parameters
 
-After that we should rebuild image and run `docker run arguments some arguments`{{execute T1}}
-
+`docker run arguments some arguments`{{execute T1}}
+  
+  ### 10. Remove container and appropriate image
+  
+  `docker rm <container_name or container_ID>` and `docker rmi arguments`
+  
 
