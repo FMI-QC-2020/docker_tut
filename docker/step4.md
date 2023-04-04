@@ -91,23 +91,28 @@ services:
        
        
  We have error `angular-ui exited with code 1`.
- This angular application required node version <= 16, so we must rewrite docker file for ui part with 16 version of nodejs 
+ This angular application required node version <= 16, so we must 
+ 
+ ### 7. Rewrite docker file for ui part with 16 version of nodejs 
+ 
  `touch ui/Dockerfile-dev`{{execute T1}}
  
- ### 7. Stop docker compose
+ ### 8. Stop docker compose
 
- Ctrl+C or `cd angular-compose && docker-compose stop`{{execute T2}}
+ Ctrl+C or `cd angular-compose && docker-compose stop`{{execute T2}} in other terminal 
 
- ### 8. Rebuild docker compose 
+ ### 9. Rebuild docker compose 
  
  `docker-compose build`{{execute T1}}
  
- ### 9. Start application
+ ### 10. Start application
  
   `docker-compose up`{{execute T1}}
+  
+ ## Switch to other terminal tab
        
        
- ### 10. Check if application is started with commands
+ ### 11. Check if application is started with commands
  
  
  curl for post method 
@@ -118,11 +123,11 @@ services:
  
  `curl http://localhost:4201/api/users`
  
- ### 11. Stop application
+ ### 12. Stop application
  
 `docker-compose -f angular-compose/docker-compose.yml stop`{{execute T3}}
 
-### 12. Check if application was stopped
+### 13. Check if application was stopped
 
 curl http://localhost:4201/api/users`{{execute T1}}
 
