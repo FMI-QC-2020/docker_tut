@@ -20,31 +20,29 @@ use `vim ruby-script.rb` or `echo 'content' > ruby-script.rb`
 
 ### 2. Create Dockerfile with content
 
-FROM ruby:3.0
-
 <details>
-<summary>FROM <image>[:tag]</summary>
+<summary>FROM ruby:3.0</summary>
 This instruction will set the base image for the Dockerfile, which means that every instruction that follows applies to this base image
 </details>
 
-COPY ruby-script.rb /ruby-script.rb
+
 
  <details>
-<summary>COPY</summary>
+<summary>COPY ruby-script.rb /ruby-script.rb</summary>
 The COPY instruction copies a folder from your local machine to your Docker image.
   </details>
 
-RUN chmod +x /ruby-script.rb
+
   
   <details>
-<summary>RUN</summary>
+<summary>RUN chmod +x /ruby-script.rb</summary>
   This instruction runs commands
   </details>
 
-CMD ruby /ruby-script.rb
+
   
    <details>
-<summary>CMD</summary>
+<summary>CMD ruby /ruby-script.rb</summary>
   The CMD instruction sets a default command, which will be executed when you run the Docker image without specifying a command
   </details>
 
@@ -68,10 +66,10 @@ It won't work, because we should pass command line parameters as arguments to ou
   
   ### 7. Change Dockerfile and replace last line of file with code  
 
-ENTRYPOINT ["ruby", "/ruby-script.rb"]
+
   
    <details>
-<summary>ENTRYPOINT</summary>
+<summary>ENTRYPOINT ["ruby", "/ruby-script.rb"]</summary>
   An ENTRYPOINT allows you to configure a container that will run as an executable.
   ENTRYPOINT instructions are not ignored but instead are appended as command line parameters by treating those as arguments of the command.
   </details>
